@@ -1,0 +1,22 @@
+
+<div class="container-fluid">
+   <form>
+      <header class="text-center"><h1>CONSOLAS DE VIDEJUEGOS</h1></header>
+      <div class="card text-center">
+         <div class="card-header">
+            <app-navbar></app-navbar>
+         </div>
+         <div class="card-body">
+            <div *ngIf="mostrarComponente === 'listaConsolas'">
+               <app-list-consolas></app-list-consolas>
+            </div>
+            <div *ngIf="mostrarComponente === 'listaJuegos'">
+               <app-list-juegos></app-list-juegos>
+            </div>
+            <div *ngIf="mostrarComponente === 'listaGeneros'">
+               <app-list-generos></app-list-generos>
+            </div>
+         </div>
+      </div>
+   </form>
+</div>

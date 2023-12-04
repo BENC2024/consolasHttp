@@ -1,0 +1,28 @@
+
+
+   <div class="row d-flex justify-content-center">
+      <div>
+         <label for="nombreConsola">Buscar por nombre: </label>
+         <input type="text" id="nombreConsola" placeholder="Ingrese nombre consola" [(ngModel)]="buscarNombre">
+         <button class="btn btn-primary" routerLink="/guardarConsolas"><i class="bi bi-plus-circle"></i></button>
+      </div>
+      <ng-container *ngFor="let consola of listaConsolas">
+         <ng-container *ngIf="consola.nombre.toLowerCase().includes(buscarNombre.toLowerCase())">
+            <div class="card m-2" style="width: 18rem;">
+               <img src="{{consola.enlaceImagen}}" class="card-img-top" alt="imagen" (click)="detalleConsola(consola._id)">
+               <div class="card-body">
+                  <h5 class="card-title">{{consola.nombre}}</h5>
+                  <!-- <a class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
+                  <a class="btn btn-primary"><i class="bi bi-pencil-fill"></i></a>
+                  <a class="btn btn-primary"><i class="bi bi-trash-fill"></i></a> -->
+               </div>
+               <ul class="list-group list-group-flush">
+                  <!-- <li class="list-group-item">{{consola._id}}</li> -->
+                  <li class="list-group-item">{{consola.fabricante}}</li>
+                  <li class="list-group-item">{{consola.lanzamiento}}</li>
+                  <li class="list-group-item">{{consola.almacenamiento}}</li>
+               </ul>
+            </div>
+         </ng-container>
+      </ng-container>
+   </div>

@@ -1,0 +1,29 @@
+
+<div>
+   <label for="nombreJuego">Buscar por nombre: </label>
+   <input type="text" id="nombreJuego" placeholder="Ingrese nombre juego" [(ngModel)]="buscarNombre">
+   <button class="btn btn-primary" routerLink="/guardarJuegos"><i class="bi bi-plus-circle"></i></button>
+</div>
+
+<table class="table table-hover">
+   <thead>
+     <tr>
+       <th scope="col">#</th>
+       <th scope="col">Nombre</th>
+       <th scope="col">Descripción</th>
+       <th scope="col">Género</th>
+     </tr>
+   </thead>
+   <tbody>
+      <ng-container *ngFor="let juego of listadoJuego, let i = index">
+         <ng-container *ngIf="juego.nombre.toLowerCase().includes(buscarNombre.toLowerCase())">
+            <tr>
+               <th scope="row">{{i+1}}</th>
+               <td>{{juego.nombre}}</td>
+               <td>{{juego.descripcion}}</td>
+               <td>{{juego.genero_id.descripcion}}</td>
+            </tr>
+         </ng-container>
+      </ng-container>
+   </tbody>
+</table>
