@@ -17,7 +17,7 @@ export class DetailConsolaComponent {
    async ngOnInit(){ //Inicio asincrono
       this.activatedRoute.params.subscribe(async params => {
          console.log(params['id'])
-         this.detalleConsola = await this.consolaServicio.detatelleConsola(params['id'])
+         this.detalleConsola = await this.consolaServicio.detalleConsola(params['id'])
       })
       console.log(this.detalleConsola)
    }

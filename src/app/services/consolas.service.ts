@@ -14,6 +14,7 @@ export class ConsolasService {
    baseURIDetail = "http://localhost:3000/detailConsola"
    baseURISave = "http://localhost:3000/saveConsolas"
    baseURIDelete = "http://localhost:3000/deleteConsolas"
+//   baseURIUpdate = "http://localhost:3000/updateConsolas"
 
    constructor(private httpClient: HttpClient) { }
 
@@ -22,7 +23,7 @@ export class ConsolasService {
       return this.httpClient.get(this.baseURIList).pipe( catchError( e => { return throwError(e) } ) )
    }
 
-   detatelleConsola(id: String){
+   detalleConsola(id: String){
       return firstValueFrom(this.httpClient.get<any>(this.baseURIDetail+"/"+id))
       
    }

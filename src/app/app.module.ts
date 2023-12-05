@@ -14,6 +14,8 @@ import { DetailConsolaComponent } from './component/consolas/detail-consola/deta
 import { UpdateConsolaComponent } from './component/consolas/update-consola/update-consola.component';
 import { ListJuegosComponent } from './component/juegos/list-juegos/list-juegos.component';
 import { SaveJuegosComponent } from './component/juegos/save-juegos/save-juegos.component';
+import { UpdateJuegosComponent } from './component/juegos/update-juegos/update-juegos.component';
+import { DetailJuegosComponent } from './component/juegos/detail-juegos/detail-juegos.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { SaveJuegosComponent } from './component/juegos/save-juegos/save-juegos.
     DetailConsolaComponent,
     UpdateConsolaComponent,
     ListJuegosComponent,
-    SaveJuegosComponent
+    SaveJuegosComponent,
+    UpdateJuegosComponent,
+    DetailJuegosComponent
   ],
   imports: [
     BrowserModule,

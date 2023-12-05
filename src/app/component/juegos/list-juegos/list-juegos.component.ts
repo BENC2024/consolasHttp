@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { JuegosService } from 'src/app/services/juegos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-juegos',
@@ -8,10 +9,10 @@ import { JuegosService } from 'src/app/services/juegos.service';
 })
 export class ListJuegosComponent {
 
-   constructor( private juegosServices: JuegosService ){}
+   constructor( private juegosServices: JuegosService, private router: Router){}
 
    public listadoJuego: any[] = []
-
+   detalle: String = ""
    buscarNombre: String = ""
 
    async ngOnInit(){
@@ -20,5 +21,11 @@ export class ListJuegosComponent {
             this.listadoJuego = dato
          }
       )
+   }
+
+   detalleJuego(juegoId: string) {
+      this.detalle = juegoId
+      console.log(this.detalle)
+      this.router.navigate(['/detalleJuego', this.detalle]);
    }
 }

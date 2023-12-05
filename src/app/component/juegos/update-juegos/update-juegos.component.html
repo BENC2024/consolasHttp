@@ -1,0 +1,36 @@
+
+<div class="row d-flex justify-content-center">
+   <div class="card text-center" style="width: 18rem;">
+      <div class="card-body">
+      <h5 class="card-title">Modificar juego</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+         <li class="list-group-item">
+            <label for="Nombre">Nombre del videojuego: </label>
+               <input type="text" name="Nombre" id="Nombre" placeholder="Videojuego" value="{{descripcionJuego.nombre}}">
+         </li>
+         <li class="list-group-item">
+            <label for="Descripcion">Descripción: </label>
+               <textarea name="Descripcion" id="Descripcion" placeholder="Descripcion" rows="5" value="{{descripcionJuego.descripcion}}"></textarea>
+         </li>
+         <li class="list-group-item">
+            <label for="Genero">Género del videojuego: </label>
+            <select id="Genero">
+               <option *ngFor="let genero of listadoGenero" [value]="genero._id">
+                  {{genero.descripcion}}
+               </option>
+             </select>
+             <!--vincula genero._id con juego.genero_id, cuando se haga la seleccion que se haga de genero.descripcion-->
+         </li>
+         <li class="list-group-item">
+            <label for="Fecha">Fecha de lanzamiento: </label>
+               <input type="text" name="Fecha" id="Fecha" placeholder="Fecha" value="{{descripcionJuego.fechaLanzamiento}}">
+         </li>
+      </ul>
+      <div class="card-body">
+         <button type="button" class="btn btn-primary m-2" routerLink="">Actualizar juego</button>
+         <button type="button" class="btn btn-danger m-2" routerLink="">Cancelar</button>
+      </div>
+   </div>
+</div>
+

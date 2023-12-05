@@ -17,7 +17,7 @@
    <tbody>
       <ng-container *ngFor="let juego of listadoJuego, let i = index">
          <ng-container *ngIf="juego.nombre.toLowerCase().includes(buscarNombre.toLowerCase())">
-            <tr>
+            <tr (click)="detalleJuego(juego._id)">
                <th scope="row">{{i+1}}</th>
                <td>{{juego.nombre}}</td>
                <td>{{juego.descripcion}}</td>
