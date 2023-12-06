@@ -23,14 +23,13 @@ export class JuegosService {
             e => {
                return throwError(e)
                console.log("El error es: ", e )
-            } 
+            }
          )
       )
    }
 
    detalleJuego(id: String){
-      return firstValueFrom(this.httpClient.get<any>(this.baseURIDetail+"/"+id))
-      
+      return firstValueFrom(this.httpClient.get(this.baseURIDetail+"/"+id))
    }
 
    guardarJuego(juego: Juego):Observable<any>{
@@ -44,8 +43,8 @@ export class JuegosService {
       )
    }
 
-   actualizarJuego(juego: Juego):Observable<any>{
-      return this.httpClient.put(this.baseURIUpdate,juego).pipe(
+   actualizarJuego(upjuego: Juego, id: String):Observable<any>{
+      return this.httpClient.put(this.baseURIUpdate+"/"+id,upjuego).pipe(
          catchError(
             e => {
                console.log(e)
