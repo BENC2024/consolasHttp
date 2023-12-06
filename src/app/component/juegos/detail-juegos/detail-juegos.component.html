@@ -9,8 +9,9 @@
                <p class="card-text">{{detalleJuego.genero_id.descripcion}}</p>
                <p class="card-text">{{detalleJuego.genero_id.caracteristicasTipicas}}</p>
             </div>
-            <a class="btn btn-success" (click)="actualizarJuego(detalleJuego._id)">Actualizar</a>
-            <a class="btn btn-primary" routerLink="">Aceptar</a>
+              <a class="btn btn-success" (click)="actualizarJuego(detalleJuego._id)">Actualizar</a>
+              <a class="btn btn-danger" (click)="eliminarJuego(detalleJuego._id)" routerLink="">Eliminar</a>
+              <a class="btn btn-primary" routerLink="">Aceptar</a>
          </div>
       </div>
    </div>

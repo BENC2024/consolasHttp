@@ -54,4 +54,15 @@ export class JuegosService {
       )
    }
 
+   eliminarJuego(id: String):Observable<any>{
+    return this.httpClient.delete(this.baseURIDelete+"/"+id).pipe(
+       catchError(
+          e => {
+             console.log(e)
+             return e
+          }
+       )
+    )
+  }
+
 }

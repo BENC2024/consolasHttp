@@ -14,7 +14,7 @@ export class DetailJuegosComponent {
 
    detalleJuego: any = {}
    actualizar: String = ""
-   
+
    async ngOnInit(){ //Inicio asincrono
       this.activatedRoute.params.subscribe(async params => {
          console.log(params['id'])
@@ -27,6 +27,18 @@ export class DetailJuegosComponent {
       this.actualizar = juegoId
       console.log(this.actualizar)
       this.router.navigate(['/actualizarJuego', this.actualizar]);
-   }
+  }
+
+  eliminarJuego(juegoId: string) {
+    console.log(juegoId)
+    this.juegoServicio.eliminarJuego(juegoId).subscribe(data => {
+      if (data) {
+         alert("Borrado exitosamente")
+      }
+      else {
+         alert("No delete")
+      }
+    });
+  }
 
 }
